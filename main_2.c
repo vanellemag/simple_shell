@@ -15,7 +15,7 @@ int main(void)
 
 	while (1)
 	{
-		printf("#prompt$ ");
+		printf("$ ");
 		fgets(buffer, SIZE_BUFFER, stdin);
 		buffer[strlen(buffer) - 1] = '\0';
 		if (strcmp("exit", buffer) == 0)
