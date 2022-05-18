@@ -2,6 +2,9 @@
 #define SIZE_BUFFER 150
 /**
  * suit - code that passes the Betty checks
+ * @arg_list: char
+ * @p: char
+ * Return: 0 success
  */
 int suit(char **arg_list, char *p)
 {
@@ -12,6 +15,7 @@ int suit(char **arg_list, char *p)
 	 */
 	int increment;
 	pid_t process;
+
 	process = fork();
 	if (process == 0)
 	{
