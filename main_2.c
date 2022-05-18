@@ -1,5 +1,6 @@
 #include "main.h"
 #define SIZE_BUFFER 150
+int suit(char **arg_list, char *p);
 /**
  * main - code that passes the Betty checks
  *
@@ -10,7 +11,7 @@ int main(void)
 	char buffer[SIZE_BUFFER], *tmp, *p, *arg_list[20];
 	int compteur, increment;
 	size_t boucle;
-	pid_t process;
+	/*pid_t process;*/
 
 	while (1)
 	{
@@ -38,26 +39,7 @@ int main(void)
 			tmp = strtok(NULL, " ");
 		}
 		arg_list[increment] = NULL;
-		process = fork();
-		if (process == 0)
-		{
-			int retour = execvp(arg_list[0], arg_list);
-
-			if (retour ==  -1)
-				printf("%s\n", strerror(errno));
-			exit(0);
-		}
-		else
-		{
-			wait(&process);
-		}
-		increment = 0;
-		while (arg_list[increment] != NULL)
-		{
-			free(arg_list[increment]);
-			increment++;
-		}
-		free(p);
+		suit(arg_list, p);
 	}
 	return (0);
 }
