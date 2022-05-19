@@ -7,5 +7,5 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <errno.h>
-void suit(char *arg_list[], char *p);
+int suit(char *arg_list[], char *p);
 #endif /*_MAIN_H_*/
